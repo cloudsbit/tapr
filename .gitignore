@@ -1,8 +1,19 @@
-# blobs
-blobs/
+# temporay files
+*~
+~*
 
-# vagrant
-.vagrant/
+# vim swap file
+*.swp
+
+# log file
+*.log
+
+# bak file
+*.bak*
+
+# build object file
+*.o
+*.so
 
 # JetBrains Pycharm
 **/.idea
@@ -10,5 +21,18 @@ blobs/
 # vscode
 **/.vscode
 
+# blobs
+blobs/
+
+# vagrant
+.vagrant/
+
+# build directory
+**/build/*
+
+# pyc file
+*.pyc
+
+# misc
 **/f2
 **/replace

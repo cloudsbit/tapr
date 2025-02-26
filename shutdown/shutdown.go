@@ -29,7 +29,7 @@
 
 // Package shutdown provides a mechanism for registering handlers to be called
 // on process shutdown.
-package shutdown // import "github.com/cloudsbit/tapr/shutdown"
+package shutdown
 
 import (
 	"fmt"
