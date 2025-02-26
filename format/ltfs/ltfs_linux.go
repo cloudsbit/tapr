@@ -27,13 +27,13 @@ import (
 	"strconv"
 	"syscall"
 
-	"tapr.space/errors"
-	"tapr.space/flags"
-	"tapr.space/format"
-	"tapr.space/log"
-	"tapr.space/storage"
-	"tapr.space/storage/fsdir"
-	"tapr.space/store/tape"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/flags"
+	"github.com/cloudsbit/tapr/format"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/storage"
+	"github.com/cloudsbit/tapr/storage/fsdir"
+	"github.com/cloudsbit/tapr/store/tape"
 )
 
 const (

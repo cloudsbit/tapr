@@ -21,11 +21,11 @@ import (
 
 	pb "github.com/golang/protobuf/proto"
 
-	"tapr.space"
-	"tapr.space/errors"
-	"tapr.space/log"
-	"tapr.space/proto"
-	"tapr.space/rpc"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/proto"
+	"github.com/cloudsbit/tapr/rpc"
 )
 
 func (s *server) PushPrepare(reqBytes []byte) (pb.Message, error) {

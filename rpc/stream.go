@@ -35,9 +35,9 @@ import (
 
 	pb "github.com/golang/protobuf/proto"
 
-	"tapr.space/errors"
-	"tapr.space/log"
-	"tapr.space/proto"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/proto"
 )
 
 // StreamChan describes a mechanism to report streamed messages to a client

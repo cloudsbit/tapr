@@ -24,9 +24,9 @@ import (
 	"regexp"
 	"strconv"
 
-	"tapr.space/errors"
-	"tapr.space/store/tape"
-	"tapr.space/store/tape/changer"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/store/tape"
+	"github.com/cloudsbit/tapr/store/tape/changer"
 )
 
 func init() {

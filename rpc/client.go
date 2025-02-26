@@ -27,7 +27,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-package rpc // import "tapr.space/rpc"
+package rpc // import "github.com/cloudsbit/tapr/rpc"
 
 import (
 	"bytes"
@@ -38,10 +38,10 @@ import (
 
 	pb "github.com/golang/protobuf/proto"
 
-	"tapr.space"
-	"tapr.space/errors"
-	"tapr.space/flags"
-	"tapr.space/log"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/flags"
+	"github.com/cloudsbit/tapr/log"
 )
 
 // Client is a partial tapr.Service that uses HTTP as a transport

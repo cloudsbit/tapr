@@ -14,12 +14,12 @@
 
 // Package store defines the interfaces that implements the basic
 // 'store' abstraction.
-package store // import "tapr.space/store"
+package store // import "github.com/cloudsbit/tapr/store"
 
 import (
-	"tapr.space/config"
-	"tapr.space/errors"
-	"tapr.space/storage"
+	"github.com/cloudsbit/tapr/config"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/storage"
 )
 
 // A Constructor is a function that creates a Store.

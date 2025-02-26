@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
-	"tapr.space"
-	"tapr.space/store"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/store"
 )
 
 type service struct {

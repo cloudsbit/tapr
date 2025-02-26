@@ -13,12 +13,12 @@
 // limitations under the License.
 
 // Package format defines the interfaces that implement storage formats.
-package format // import "tapr.space/format"
+package format // import "github.com/cloudsbit/tapr/format"
 
 import (
-	"tapr.space/errors"
-	"tapr.space/storage"
-	"tapr.space/store/tape"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/storage"
+	"github.com/cloudsbit/tapr/store/tape"
 )
 
 // A Constructor is a function that creates a Format.

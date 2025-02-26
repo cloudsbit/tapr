@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Package postgres implements a PostgreSQL backed inv.Inventory.
-package postgres // import "tapr.space/store/tape/inv/postgres"
+package postgres // import "github.com/cloudsbit/tapr/store/tape/inv/postgres"
 
 import (
 	"database/sql"
@@ -24,13 +24,13 @@ import (
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq" // side-effect: register postgresql driver
 
-	"tapr.space"
-	"tapr.space/bitmask"
-	"tapr.space/errors"
-	"tapr.space/log"
-	"tapr.space/store/tape"
-	"tapr.space/store/tape/changer"
-	"tapr.space/store/tape/inv"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/bitmask"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/store/tape"
+	"github.com/cloudsbit/tapr/store/tape/changer"
+	"github.com/cloudsbit/tapr/store/tape/inv"
 )
 
 func init() {

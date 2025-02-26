@@ -14,7 +14,7 @@
 
 package mgnt
 
-import "tapr.space/store/tape"
+import "github.com/cloudsbit/tapr/store/tape"
 
 // Client defines an administrative interface.
 type Client interface {

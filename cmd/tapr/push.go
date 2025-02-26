@@ -20,7 +20,7 @@ import (
 	"log"
 	"os"
 
-	"tapr.space"
+	"github.com/cloudsbit/tapr"
 )
 
 func (s *State) push(args ...string) {

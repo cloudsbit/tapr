@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package ioserver // import "tapr.space/rpc/ioserver"
+package ioserver // import "github.com/cloudsbit/tapr/rpc/ioserver"
 
 import (
 	"fmt"
 	"net/http"
 	"sync"
 
-	"tapr.space"
-	"tapr.space/log"
-	"tapr.space/rpc"
-	"tapr.space/store"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/rpc"
+	"github.com/cloudsbit/tapr/store"
 )
 
 type server struct {

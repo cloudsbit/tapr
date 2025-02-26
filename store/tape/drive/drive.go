@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package drive // import "tapr.space/store/tape/drive"
+package drive // import "github.com/cloudsbit/tapr/store/tape/drive"
 
 import (
 	"fmt"
 	"os"
 
-	"tapr.space/flags"
-	"tapr.space/format"
-	"tapr.space/log"
-	"tapr.space/storage"
-	"tapr.space/store/tape"
-	"tapr.space/store/tape/changer"
-	"tapr.space/store/tape/inv"
+	"github.com/cloudsbit/tapr/flags"
+	"github.com/cloudsbit/tapr/format"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/storage"
+	"github.com/cloudsbit/tapr/store/tape"
+	"github.com/cloudsbit/tapr/store/tape/changer"
+	"github.com/cloudsbit/tapr/store/tape/inv"
 )
 
 // Drive represents a tape drive.

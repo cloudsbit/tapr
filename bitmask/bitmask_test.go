@@ -16,7 +16,7 @@ package bitmask_test
 import (
 	"testing"
 
-	"tapr.space/bitmask"
+	"github.com/cloudsbit/tapr/bitmask"
 )
 
 const (

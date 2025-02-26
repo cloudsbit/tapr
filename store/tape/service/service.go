@@ -18,16 +18,16 @@ import (
 	"os"
 	"sync"
 
-	"tapr.space"
-	"tapr.space/config"
-	"tapr.space/flags"
-	"tapr.space/format"
-	"tapr.space/log"
-	"tapr.space/store"
-	"tapr.space/store/tape"
-	"tapr.space/store/tape/changer"
-	"tapr.space/store/tape/drive"
-	"tapr.space/store/tape/inv"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/config"
+	"github.com/cloudsbit/tapr/flags"
+	"github.com/cloudsbit/tapr/format"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/store"
+	"github.com/cloudsbit/tapr/store/tape"
+	"github.com/cloudsbit/tapr/store/tape/changer"
+	"github.com/cloudsbit/tapr/store/tape/drive"
+	"github.com/cloudsbit/tapr/store/tape/inv"
 )
 
 func init() {

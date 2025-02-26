@@ -26,10 +26,10 @@ import (
 	filedebug "hpt.space/bltfs/backend/file"
 	"hpt.space/bltfs/util/fsutil"
 
-	"tapr.space"
-	"tapr.space/errors"
-	"tapr.space/log"
-	"tapr.space/storage"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/storage"
 )
 
 type storageImpl struct {

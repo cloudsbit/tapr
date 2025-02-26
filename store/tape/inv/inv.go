@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package inv // import "tapr.space/store/tape/inv"
+package inv // import "github.com/cloudsbit/tapr/store/tape/inv"
 
 import (
-	"tapr.space"
-	"tapr.space/errors"
-	"tapr.space/store/tape"
-	"tapr.space/store/tape/changer"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/store/tape"
+	"github.com/cloudsbit/tapr/store/tape/changer"
 )
 
 // InventoryConstructor is a function that creates an Inventory.

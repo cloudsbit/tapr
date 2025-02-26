@@ -15,11 +15,11 @@
 package client
 
 import (
-	"tapr.space"
-	"tapr.space/mgnt"
-	"tapr.space/rpc"
-	"tapr.space/store/tape"
-	"tapr.space/store/tape/proto"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/mgnt"
+	"github.com/cloudsbit/tapr/rpc"
+	"github.com/cloudsbit/tapr/store/tape"
+	"github.com/cloudsbit/tapr/store/tape/proto"
 )
 
 // ManagementClient implements mgnt.Client

@@ -21,7 +21,7 @@ import (
 	"os"
 	"text/tabwriter"
 
-	"tapr.space/store/tape"
+	"github.com/cloudsbit/tapr/store/tape"
 )
 
 func (s *State) vol(args ...string) {

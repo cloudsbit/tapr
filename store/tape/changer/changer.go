@@ -14,8 +14,8 @@
 package changer
 
 import (
-	"tapr.space/errors"
-	"tapr.space/store/tape"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/store/tape"
 )
 
 // Constructor is a function that creates a Changer.

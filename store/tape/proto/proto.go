@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package proto // import "tapr.space/store/tape/proto"
+package proto // import "github.com/cloudsbit/tapr/store/tape/proto"
 
-import "tapr.space/store/tape"
+import "github.com/cloudsbit/tapr/store/tape"
 
 // To regenerate the protocol buffer output for this package, run
 //      go generate

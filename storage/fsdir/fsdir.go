@@ -20,8 +20,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"tapr.space"
-	"tapr.space/storage"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/storage"
 )
 
 type Storage struct {

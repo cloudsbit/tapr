@@ -40,9 +40,9 @@ import (
 	"sort"
 	"strings"
 
-	"tapr.space/config"
-	"tapr.space/flags"
-	"tapr.space/subcmd"
+	"github.com/cloudsbit/tapr/config"
+	"github.com/cloudsbit/tapr/flags"
+	"github.com/cloudsbit/tapr/subcmd"
 )
 
 const intro = `

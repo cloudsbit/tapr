@@ -19,7 +19,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"tapr.space/log"
+	"github.com/cloudsbit/tapr/log"
 )
 
 var enabled int32 // read/written atomically

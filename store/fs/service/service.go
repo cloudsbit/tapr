@@ -18,10 +18,10 @@ package service
 import (
 	"os"
 
-	"tapr.space/config"
-	"tapr.space/log"
-	"tapr.space/storage/fsdir"
-	"tapr.space/store"
+	"github.com/cloudsbit/tapr/config"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/storage/fsdir"
+	"github.com/cloudsbit/tapr/store"
 )
 
 func init() {

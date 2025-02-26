@@ -15,7 +15,7 @@
 // Package tapr includes the main Tapr types and interfaces.
 //
 // This package MUST NOT import any other Tapr packages.
-package tapr // import "tapr.space"
+package tapr // import "github.com/cloudsbit/tapr"
 
 import (
 	"io"

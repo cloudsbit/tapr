@@ -3,3 +3,6 @@ blobs/
 
 # vagrant
 .vagrant/
+
+**/f2
+**/replace

@@ -21,12 +21,12 @@ import (
 	"sync"
 	"time"
 
-	"tapr.space/bitmask"
-	"tapr.space/errors"
-	"tapr.space/log"
-	"tapr.space/sim"
-	"tapr.space/store/tape"
-	"tapr.space/store/tape/changer"
+	"github.com/cloudsbit/tapr/bitmask"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/sim"
+	"github.com/cloudsbit/tapr/store/tape"
+	"github.com/cloudsbit/tapr/store/tape/changer"
 )
 
 func init() {

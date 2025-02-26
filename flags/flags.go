@@ -29,7 +29,7 @@
 
 // Package flags defines command-line flags to make them consistent between
 // binaries. Not all flags make sense for all binaries.
-package flags // import "tapr.space/flags"
+package flags // import "github.com/cloudsbit/tapr/flags"
 
 import (
 	"flag"
@@ -38,8 +38,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"tapr.space/config"
-	"tapr.space/log"
+	"github.com/cloudsbit/tapr/config"
+	"github.com/cloudsbit/tapr/log"
 )
 
 // flagVar represents a flag in this package.

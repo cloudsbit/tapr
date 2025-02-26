@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package invserver // import "tapr.space/rpc/invserver"
+package invserver // import "github.com/cloudsbit/tapr/rpc/invserver"
 
 import (
 	"fmt"
@@ -20,12 +20,12 @@ import (
 
 	pb "github.com/golang/protobuf/proto"
 
-	"tapr.space"
-	"tapr.space/errors"
-	"tapr.space/log"
-	"tapr.space/rpc"
-	"tapr.space/store/tape/inv"
-	"tapr.space/store/tape/proto"
+	"github.com/cloudsbit/tapr"
+	"github.com/cloudsbit/tapr/errors"
+	"github.com/cloudsbit/tapr/log"
+	"github.com/cloudsbit/tapr/rpc"
+	"github.com/cloudsbit/tapr/store/tape/inv"
+	"github.com/cloudsbit/tapr/store/tape/proto"
 )
 
 type server struct {

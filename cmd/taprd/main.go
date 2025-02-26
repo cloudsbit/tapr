@@ -20,25 +20,25 @@ import (
 	_ "net/http/pprof"
 	"os"
 
-	"tapr.space/config"
-	"tapr.space/flags"
-	"tapr.space/rpc/ioserver"
-	"tapr.space/sim"
-	"tapr.space/store"
+	"github.com/cloudsbit/tapr/config"
+	"github.com/cloudsbit/tapr/flags"
+	"github.com/cloudsbit/tapr/rpc/ioserver"
+	"github.com/cloudsbit/tapr/sim"
+	"github.com/cloudsbit/tapr/store"
 
 	// store implementations
-	_ "tapr.space/store/fs/service"
-	_ "tapr.space/store/tape/service"
+	_ "github.com/cloudsbit/tapr/store/fs/service"
+	_ "github.com/cloudsbit/tapr/store/tape/service"
 
 	// inventory implementations
-	_ "tapr.space/store/tape/inv/postgres"
+	_ "github.com/cloudsbit/tapr/store/tape/inv/postgres"
 
 	// changer implementations
-	_ "tapr.space/store/tape/changer/fake"
-	_ "tapr.space/store/tape/changer/mtx"
+	_ "github.com/cloudsbit/tapr/store/tape/changer/fake"
+	_ "github.com/cloudsbit/tapr/store/tape/changer/mtx"
 
 	// format implementations
-	_ "tapr.space/format/ltfs"
+	_ "github.com/cloudsbit/tapr/format/ltfs"
 )
 
 func main() {

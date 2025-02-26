@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package proto // import "tapr.space/proto"
+package proto // import "github.com/cloudsbit/tapr/proto"
 
 import (
-	"tapr.space/log"
+	"github.com/cloudsbit/tapr/log"
 )
 
 // To regenerate the protocol buffer output for this package, run

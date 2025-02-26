@@ -14,7 +14,7 @@
 
 package tape
 
-import "tapr.space/config"
+import "github.com/cloudsbit/tapr/config"
 
 func init() {
 	config.Register("store/tape", configurator)

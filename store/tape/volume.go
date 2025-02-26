@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"strings"
 
-	"tapr.space/bitmask"
+	"github.com/cloudsbit/tapr/bitmask"
 )
 
 // A Serial is the volume serial number (VOLSER) of a tape.
