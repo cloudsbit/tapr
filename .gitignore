@@ -4,5 +4,11 @@ blobs/
 # vagrant
 .vagrant/
 
+# JetBrains Pycharm
+**/.idea
+
+# vscode
+**/.vscode
+
 **/f2
 **/replace
