@@ -33,7 +33,7 @@ import (
 	"encoding/binary"
 	"io"
 
-	pb "github.com/golang/protobuf/proto"
+	pb "google.golang.org/protobuf/proto"
 
 	"github.com/cloudsbit/tapr/errors"
 	"github.com/cloudsbit/tapr/log"

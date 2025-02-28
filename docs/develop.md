@@ -1,5 +1,3 @@
-
-
 ## `Tapr`配置记录
 
 ```shell
@@ -126,9 +124,32 @@ taprd: starting
 # 如何要进行复现?
 # 1. 清除pgsql里面创建的表
 # 2. mounst挂载的目录
+umount /srv/tapr/store/ltfs/A00000L7
+umount /srv/tapr/store/ltfs/A00001L7
+rm -rf /srv/tapr/
 ```
 
-## ![image-20250228065658930](assets\image-20250228065658930.png)
+![image-20250228065658930](assets\image-20250228065658930.png)
+
+
+## tapr上传文件
+
+```shell
+[root@localhost tapr]#  ./tapr -config /home/johnny/tapr/tapr.yaml -log debug  push -in=./tapr.yaml new_tapr.yaml 
+# 文件位于:
+/srv/tapr/stor/fs
+```
+
+![image-20250228100306018](assets\image-20250228100306018.png)
+![image-20250228100609570](assets\image-20250228100609570.png)
+
+## Tapr源码记录
+
+```shell
+#
+# protoc --go_out=. --go_opt=paths=source_relative  "tapr.proto"
+# 
+```
 
 
 

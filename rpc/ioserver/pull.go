@@ -17,7 +17,7 @@ package ioserver
 import (
 	"io"
 
-	pb "github.com/golang/protobuf/proto"
+	pb "google.golang.org/protobuf/proto"
 
 	"github.com/cloudsbit/tapr"
 	"github.com/cloudsbit/tapr/errors"

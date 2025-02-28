@@ -33,10 +33,9 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 
-	pb "github.com/golang/protobuf/proto"
+	pb "google.golang.org/protobuf/proto"
 
 	"github.com/cloudsbit/tapr"
 	"github.com/cloudsbit/tapr/errors"
@@ -229,7 +228,7 @@ func (c *httpClient) invoke(op, method string, body io.Reader) (resp *http.Respo
 	}
 
 	if resp.StatusCode != http.StatusOK {
-		msg, _ := ioutil.ReadAll(resp.Body)
+		msg, _ := io.ReadAll(resp.Body)
 		resp.Body.Close()
 		if resp.Header.Get("Content-type") == "application/octet-stream" {
 			return nil, errors.E(op, errors.UnmarshalError(msg))
@@ -244,7 +243,7 @@ func (c *httpClient) invoke(op, method string, body io.Reader) (resp *http.Respo
 func readResponse(op string, body io.ReadCloser, resp pb.Message) error {
 	defer body.Close()
 
-	respBytes, err := ioutil.ReadAll(body)
+	respBytes, err := io.ReadAll(body)
 	if err != nil {
 		return errors.E(op, errors.IO, err)
 	}

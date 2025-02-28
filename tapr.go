@@ -15,7 +15,7 @@
 // Package tapr includes the main Tapr types and interfaces.
 //
 // This package MUST NOT import any other Tapr packages.
-package tapr // import "github.com/cloudsbit/tapr"
+package tapr
 
 import (
 	"io"
@@ -26,8 +26,9 @@ import (
 // Tapr path names are special. They may match certain pseudo-directories.
 //
 // Examples
-//    /tapr/x/(un)compress/gzip/...
-//    /tapr/x/{en,de}crypt/<key>/...
+//
+//	/tapr/x/(un)compress/gzip/...
+//	/tapr/x/{en,de}crypt/<key>/...
 type PathName string
 
 // A Dataset is a collection of files and directories.

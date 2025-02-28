@@ -75,7 +75,6 @@ exclusive.
 		if err := s.Client.Append(name, rd); err != nil {
 			log.Fatal(err)
 		}
-
 		return
 	}
 

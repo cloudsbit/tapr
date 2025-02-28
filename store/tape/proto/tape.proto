@@ -16,6 +16,8 @@ syntax = "proto3";
 
 package proto;
 
+option go_package = "./proto";
+
 // Location represents a location in a tape library
 message Location {
   int64 addr = 1;

@@ -13,13 +13,13 @@
 // limitations under the License.
 
 // Package client implements a tapr.Client.
-package client // import "github.com/cloudsbit/tapr/client"
+package client
 
 import (
 	"encoding/binary"
 	"io"
 
-	pb "github.com/golang/protobuf/proto"
+	pb "google.golang.org/protobuf/proto"
 
 	"github.com/cloudsbit/tapr"
 	"github.com/cloudsbit/tapr/errors"

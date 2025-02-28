@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package proto // import "github.com/cloudsbit/tapr/store/tape/proto"
+package proto
 
 import "github.com/cloudsbit/tapr/store/tape"
 
 // To regenerate the protocol buffer output for this package, run
 //      go generate
 
-//go:generate protoc tape.proto --go_out=.
+//go:generate protoc --go_out=. --go_opt=paths=source_relative tape.proto
 
 // VolumeProto converts a tapr.Volume to a proto.Volume.
 func VolumeProto(v tape.Volume) *Volume {

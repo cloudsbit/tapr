@@ -35,11 +35,10 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"strings"
 
-	pb "github.com/golang/protobuf/proto"
+	pb "google.golang.org/protobuf/proto"
 
 	"github.com/cloudsbit/tapr"
 	"github.com/cloudsbit/tapr/errors"
@@ -155,7 +154,7 @@ func (s *serverImpl) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	switch {
 	case method != nil:
-		body, err := ioutil.ReadAll(r.Body)
+		body, err := io.ReadAll(r.Body)
 		r.Body.Close()
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
@@ -166,7 +165,7 @@ func (s *serverImpl) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		sendResponse(w, resp, err)
 
 	case egress != nil:
-		body, err := ioutil.ReadAll(r.Body)
+		body, err := io.ReadAll(r.Body)
 		r.Body.Close()
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)

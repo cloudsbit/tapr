@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package proto // import "github.com/cloudsbit/tapr/proto"
+package proto
 
 import (
 	"github.com/cloudsbit/tapr/log"
@@ -21,7 +21,7 @@ import (
 // To regenerate the protocol buffer output for this package, run
 //	go generate
 
-//go:generate protoc tapr.proto --go_out=.
+//go:generate protoc --go_out=. --go_opt=paths=source_relative tapr.proto
 
 // LogLevelProto converts a log.Level to a proto.LogLevel.
 func LogLevelProto(lvl log.Level) LogLevel {
