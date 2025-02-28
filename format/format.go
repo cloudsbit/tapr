@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Package format defines the interfaces that implement storage formats.
-package format // import "github.com/cloudsbit/tapr/format"
+package format
 
 import (
 	"github.com/cloudsbit/tapr/errors"

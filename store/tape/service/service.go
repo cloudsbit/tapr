@@ -15,6 +15,8 @@
 package service
 
 import (
+	"github.com/cloudsbit/tapr/rpc/invserver"
+	"net/http"
 	"os"
 	"sync"
 
@@ -58,6 +60,11 @@ func New(name string, _cfg config.StoreConfig) (store.Store, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// inv api server
+	invIO := invserver.New(config.New(), invdb)
+	http.Handle("/api/v1/"+name+"/inv/", invIO)
+	//fmt.Fprintf(os.Stderr, "inv API: /api/v1/%v/inv/\n", name)
 
 	// reset the database if requested
 	if flags.ResetDB {

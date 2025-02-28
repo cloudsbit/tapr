@@ -248,7 +248,7 @@ func readResponse(op string, body io.ReadCloser, resp pb.Message) error {
 		return errors.E(op, errors.IO, err)
 	}
 
-	if err := pb.Unmarshal(respBytes, resp); err != nil {
+	if err = pb.Unmarshal(respBytes, resp); err != nil {
 		return errors.E(op, errors.Invalid, err)
 	}
 

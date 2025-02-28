@@ -18,6 +18,6 @@ import "github.com/cloudsbit/tapr/store/tape"
 
 // Client defines an administrative interface.
 type Client interface {
-	// Status returns a list of known volumes.
+	// Volumes returns a list of known volumes.
 	Volumes() ([]tape.Volume, error)
 }

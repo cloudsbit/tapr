@@ -119,8 +119,8 @@ LTFS15023I Formatting failed.
 
 ```shell
 # 命令：
-[root@localhost tapr]#  ./taprd -audit -serverconfig /home/johnny/tapr/taprd.yaml -log debug -emulate-dev -simulate -dbreset
-taprd: starting
+./taprd -audit -serverconfig /home/johnny/tapr/taprd.yaml -log debug -emulate-dev -simulate -dbreset
+
 # 如何要进行复现?
 # 1. 清除pgsql里面创建的表
 # 2. mounst挂载的目录
@@ -135,9 +135,13 @@ rm -rf /srv/tapr/
 ## tapr上传文件
 
 ```shell
-[root@localhost tapr]#  ./tapr -config /home/johnny/tapr/tapr.yaml -log debug  push -in=./tapr.yaml new_tapr.yaml 
+# 命令：
+./tapr -config /home/johnny/tapr/tapr.yaml -log debug  push -in=./tapr.yaml new_tapr.yaml 
+
 # 文件位于:
 /srv/tapr/stor/fs
+
+./tapradm -config /home/johnny/tapr/tapr.yaml -log debug vol -l
 ```
 
 ![image-20250228100306018](assets\image-20250228100306018.png)
@@ -149,6 +153,12 @@ rm -rf /srv/tapr/
 #
 # protoc --go_out=. --go_opt=paths=source_relative  "tapr.proto"
 # 
+
+#
+# config中的Register默认注册了"store/fs" 和"store/tape" 两支路由
+# store中的Register也默认注册了"store/fs" 和"store/tape" 两支路由
+#
+
 ```
 
 

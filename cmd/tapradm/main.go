@@ -33,7 +33,6 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
@@ -108,6 +107,7 @@ func setup(fs *flag.FlagSet, args []string) (*State, []string, bool) {
 	if len(fs.Args()) < 1 {
 		return nil, nil, false
 	}
+	//fmt.Fprintf(os.Stderr, "fs.Agr: %+v\n", fs.Args())
 
 	state := newState(strings.ToLower(fs.Arg(0)))
 	state.init()
@@ -117,9 +117,9 @@ func setup(fs *flag.FlagSet, args []string) (*State, []string, bool) {
 
 // run runs a single command specified by the arguments, which should begin with
 // the subcommand ("ls", "info", etc.).
-func (state *State) run(args []string) {
-	cmd := state.getCommand(args[0])
-	cmd(state, args[1:]...)
+func (s *State) run(args []string) {
+	cmd := s.getCommand(args[0])
+	cmd(s, args[1:]...)
 }
 
 func usage() {
@@ -182,7 +182,7 @@ func printCommands() {
 // getCommand looks up the command named by op.
 // If the command can't be found, it exits after listing the commands
 // that do exist.
-func (state *State) getCommand(op string) func(*State, ...string) {
+func (s *State) getCommand(op string) func(*State, ...string) {
 	op = strings.ToLower(op)
 	fn := commands[op]
 	if fn != nil {
@@ -191,7 +191,7 @@ func (state *State) getCommand(op string) func(*State, ...string) {
 
 	printCommands()
 
-	state.Exitf("no such command %q", op)
+	s.Exitf("no such command %q", op)
 
 	return nil
 }
@@ -207,15 +207,15 @@ func newState(name string) *State {
 
 // init initializes the State with what is required to run the subcommand,
 // usually including setting up a Config.
-func (state *State) init() {
-	data, err := ioutil.ReadFile(flags.Config)
+func (s *State) init() {
+	data, err := os.ReadFile(flags.Config)
 	if err != nil {
-		state.Exit(err)
+		s.Exit(err)
 	}
 
 	cfg, err := config.InitConfig(bytes.NewReader(data))
 
-	state.State.Init(cfg)
+	s.State.Init(cfg)
 
-	state.configFile = data
+	s.configFile = data
 }

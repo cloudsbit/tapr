@@ -30,6 +30,7 @@
 package config
 
 import (
+	"encoding/json"
 	"io"
 	"os"
 	osuser "os/user"
@@ -127,7 +128,7 @@ func InitConfig(r io.Reader) (tapr.Config, error) {
 
 	cfg := New()
 	_cfg := make(map[string]string)
-	if err := yaml.Unmarshal(b, _cfg); err != nil {
+	if err = yaml.Unmarshal(b, _cfg); err != nil {
 		return nil, err
 	}
 
@@ -191,4 +192,9 @@ func isDir(p string) error {
 		return errors.E(errors.NotDir, errors.Str(p))
 	}
 	return nil
+}
+
+func PrettyPrint(i interface{}) string {
+	s, _ := json.MarshalIndent(i, "", " ")
+	return string(s)
 }

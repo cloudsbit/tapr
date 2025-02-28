@@ -72,7 +72,7 @@ exclusive.
 		}
 
 		// now just perform an append
-		if err := s.Client.Append(name, rd); err != nil {
+		if err = s.Client.Append(name, rd); err != nil {
 			log.Fatal(err)
 		}
 		return

@@ -44,6 +44,7 @@ func New(cfg tapr.Config, inv inv.Inventory) http.Handler {
 
 	return rpc.NewServer(cfg, rpc.Service{
 		Name: "inv",
+
 		Methods: map[string]rpc.Method{
 			"volumes": s.Volumes,
 		},
