@@ -27,11 +27,10 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-package config // import "github.com/cloudsbit/tapr/config"
+package config
 
 import (
 	"io"
-	"io/ioutil"
 	"os"
 	osuser "os/user"
 
@@ -95,7 +94,7 @@ type ServerConfig struct {
 
 // InitServerConfig initializes a server configuration from an io.Reader.
 func InitServerConfig(r io.Reader) (*ServerConfig, error) {
-	b, err := ioutil.ReadAll(r)
+	b, err := io.ReadAll(r)
 	if err != nil {
 		return nil, err
 	}
@@ -121,7 +120,7 @@ func New() tapr.Config {
 
 // InitConfig initializes a client config from an io.Reader.
 func InitConfig(r io.Reader) (tapr.Config, error) {
-	b, err := ioutil.ReadAll(r)
+	b, err := io.ReadAll(r)
 	if err != nil {
 		return nil, err
 	}

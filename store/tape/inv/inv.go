@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package inv // import "github.com/cloudsbit/tapr/store/tape/inv"
+package inv
 
 import (
 	"github.com/cloudsbit/tapr"
@@ -73,10 +73,10 @@ type Inventory interface {
 	// and mounts it into the device at the given destination.
 	Alloc() (tape.Serial, error)
 
-	// Loaded returns whether or not the given drive is loaded.
+	// Loaded returns whether the given drive is loaded.
 	Loaded(tape.Location) (bool, tape.Serial, error)
 
-	// Status returns a list of known volumes.
+	// Volumes Status returns a list of known volumes.
 	Volumes() ([]tape.Volume, error)
 
 	// Update updates volume information

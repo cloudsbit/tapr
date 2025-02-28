@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package ioserver // import "github.com/cloudsbit/tapr/rpc/ioserver"
+package ioserver
 
 import (
 	"fmt"

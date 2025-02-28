@@ -116,7 +116,7 @@ func New(name string, _cfg config.StoreConfig) (store.Store, error) {
 		wg.Add(1)
 
 		go func() {
-			if err := drv.Start(invdb, chgr, fmtr); err != nil {
+			if err = drv.Start(invdb, chgr, fmtr); err != nil {
 				log.Fatal(err)
 			}
 

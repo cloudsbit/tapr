@@ -52,7 +52,8 @@ taprd: prepare
 build: all
 
 install: all
-	@$(CP) -rf ${RELEASE_DIR}/* ${INSTALL_DIR}/
+	@$(CP) -rf ${RELEASE_DIR}/conf/* ${INSTALL_DIR}/
+	@$(CP) -rf ${RELEASE_DIR}/*      ${INSTALL_DIR}/
 
 clean:
 	@$(RM) -rf ${RELEASE_DIR}/*

@@ -14,7 +14,7 @@
 
 // Package store defines the interfaces that implements the basic
 // 'store' abstraction.
-package store // import "github.com/cloudsbit/tapr/store"
+package store
 
 import (
 	"github.com/cloudsbit/tapr/config"
@@ -44,7 +44,7 @@ type Store interface {
 	// String returns the target name of the store.
 	String() string
 
-	// embed the storage.Storage interface.
+	// Storage embed the storage.Storage interface.
 	storage.Storage
 }
 

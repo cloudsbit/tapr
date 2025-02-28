@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package invserver // import "github.com/cloudsbit/tapr/rpc/invserver"
+package invserver
 
 import (
 	"fmt"

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Package postgres implements a PostgreSQL backed inv.Inventory.
-package postgres // import "github.com/cloudsbit/tapr/store/tape/inv/postgres"
+package postgres
 
 import (
 	"database/sql"
@@ -240,7 +240,7 @@ func (p *postgres) Load(serial tape.Serial, dst tape.Location, chgr changer.Chan
 		return errors.E(op, errors.Strf("invalid destination slot for load operation"))
 	}
 
-	bitmask.Set(&r.Flags, tape.StatusTransfering)
+	bitmask.Set(&r.Flags, tape.StatusTransferring)
 	bitmask.Set(&r.Flags, tape.StatusMounted)
 
 	stmt = `
@@ -265,7 +265,7 @@ func (p *postgres) Load(serial tape.Serial, dst tape.Location, chgr changer.Chan
 		return err
 	}
 
-	bitmask.Clear(&r.Flags, tape.StatusTransfering)
+	bitmask.Clear(&r.Flags, tape.StatusTransferring)
 
 	stmt = `
 		UPDATE volumes
@@ -321,7 +321,7 @@ func (p *postgres) Unload(serial tape.Serial, dst tape.Location, chgr changer.Ch
 	}
 
 	bitmask.Clear(&r.Flags, tape.StatusMounted)
-	bitmask.Set(&r.Flags, tape.StatusTransfering)
+	bitmask.Set(&r.Flags, tape.StatusTransferring)
 
 	stmt = `
 		UPDATE volumes
@@ -344,7 +344,7 @@ func (p *postgres) Unload(serial tape.Serial, dst tape.Location, chgr changer.Ch
 		return err
 	}
 
-	bitmask.Clear(&r.Flags, tape.StatusTransfering)
+	bitmask.Clear(&r.Flags, tape.StatusTransferring)
 
 	stmt = `
 		UPDATE volumes
@@ -391,7 +391,7 @@ func (p *postgres) Transfer(serial tape.Serial, dst tape.Location, chgr changer.
 	}
 
 	// set transfering flag
-	bitmask.Set(&r.Flags, tape.StatusTransfering)
+	bitmask.Set(&r.Flags, tape.StatusTransferring)
 
 	stmt = `
 		UPDATE volumes
@@ -414,7 +414,7 @@ func (p *postgres) Transfer(serial tape.Serial, dst tape.Location, chgr changer.
 		return err
 	}
 
-	bitmask.Clear(&r.Flags, tape.StatusTransfering)
+	bitmask.Clear(&r.Flags, tape.StatusTransferring)
 
 	stmt = `
 		UPDATE volumes
@@ -523,7 +523,7 @@ func (p *postgres) Alloc() (serial tape.Serial, err error) {
 		FOR UPDATE
 	`
 
-	if err := tx.Get(&r, stmt); err != nil {
+	if err = tx.Get(&r, stmt); err != nil {
 		return serial, rollback(op, tx, err)
 	}
 
@@ -543,7 +543,7 @@ func (p *postgres) Alloc() (serial tape.Serial, err error) {
 		}
 	}
 
-	if err := commit(op, tx); err != nil {
+	if err = commit(op, tx); err != nil {
 		return serial, err
 	}
 

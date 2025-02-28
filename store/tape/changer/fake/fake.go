@@ -166,7 +166,7 @@ func (chgr *changerImpl) Unload(src, dst tape.Location) error {
 	sim.Maybe(func(state sim.State) {
 		v := srcSlot.Volume
 
-		bitmask.Set(&v.Flags, tape.StatusTransfering)
+		bitmask.Set(&v.Flags, tape.StatusTransferring)
 
 		srcSlot.Volume = nil
 
@@ -182,7 +182,7 @@ func (chgr *changerImpl) Unload(src, dst tape.Location) error {
 
 		dstSlot.Volume = v
 
-		bitmask.Clear(&v.Flags, tape.StatusTransfering)
+		bitmask.Clear(&v.Flags, tape.StatusTransferring)
 	})
 
 	return nil
@@ -202,7 +202,7 @@ func (chgr *changerImpl) Load(src, dst tape.Location) error {
 	sim.Maybe(func(state sim.State) {
 		v := srcSlot.Volume
 
-		bitmask.Set(&v.Flags, tape.StatusTransfering)
+		bitmask.Set(&v.Flags, tape.StatusTransferring)
 
 		srcSlot.Volume = nil
 
@@ -218,7 +218,7 @@ func (chgr *changerImpl) Load(src, dst tape.Location) error {
 
 		dstSlot.Volume = v
 
-		bitmask.Clear(&v.Flags, tape.StatusTransfering)
+		bitmask.Clear(&v.Flags, tape.StatusTransferring)
 	})
 
 	return nil
@@ -236,7 +236,7 @@ func (chgr *changerImpl) Transfer(src, dst tape.Location) error {
 	sim.Maybe(func(state sim.State) {
 		v := srcSlot.Volume
 
-		bitmask.Set(&v.Flags, tape.StatusTransfering)
+		bitmask.Set(&v.Flags, tape.StatusTransferring)
 
 		srcSlot.Volume = nil
 
@@ -250,7 +250,7 @@ func (chgr *changerImpl) Transfer(src, dst tape.Location) error {
 
 		dstSlot.Volume = v
 
-		bitmask.Clear(&v.Flags, tape.StatusTransfering)
+		bitmask.Clear(&v.Flags, tape.StatusTransferring)
 	})
 
 	return nil

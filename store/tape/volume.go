@@ -42,9 +42,9 @@ const (
 )
 
 const (
-	// StatusTransfering denotes that the volume is currently being transfered by the
+	// StatusTransferring denotes that the volume is currently being transfered by the
 	// media changer.
-	StatusTransfering uint32 = 1 << iota
+	StatusTransferring uint32 = 1 << iota
 
 	// StatusMounted is when the volume is mounted.
 	StatusMounted
@@ -59,8 +59,8 @@ const (
 // FormatVolumeFlags formats the flags for human consumption.
 func FormatVolumeFlags(f uint32) string {
 	var out []string
-	if bitmask.IsSet(f, StatusTransfering) {
-		out = append(out, "transfering")
+	if bitmask.IsSet(f, StatusTransferring) {
+		out = append(out, "transferring")
 	}
 
 	if bitmask.IsSet(f, StatusMounted) {

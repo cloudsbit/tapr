@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package drive // import "github.com/cloudsbit/tapr/store/tape/drive"
+package drive
 
 import (
 	"fmt"
@@ -84,7 +84,7 @@ func (drv *Drive) Start(invdb inv.Inventory, chgr changer.Changer, fmtr format.F
 
 		log.Debug.Printf("%s: loading %v into %v", op, serial, drv.loc)
 
-		if err := invdb.Load(serial, drv.loc, chgr); err != nil {
+		if err = invdb.Load(serial, drv.loc, chgr); err != nil {
 			return err
 		}
 	}
