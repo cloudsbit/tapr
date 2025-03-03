@@ -63,8 +63,7 @@ func New(name string, _cfg config.StoreConfig) (store.Store, error) {
 
 	// inv api server
 	invIO := invserver.New(config.New(), invdb)
-	http.Handle("/api/v1/"+name+"/inv/", invIO)
-	//fmt.Fprintf(os.Stderr, "inv API: /api/v1/%v/inv/\n", name)
+	http.Handle("/api/v1/inv/", invIO)
 
 	// reset the database if requested
 	if flags.ResetDB {

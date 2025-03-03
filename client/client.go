@@ -196,9 +196,9 @@ func (c *Client) PushFile(name tapr.PathName, rd io.Reader, append bool) error {
 		}
 	}()
 
-	stream := make(rpc.LogStream)
-
 	logRequest := &proto.PushLogRequest{Tx: prepareResp.Tx}
+
+	stream := make(rpc.LogStream)
 
 	if err := c.client.Receive("io/push/log", logRequest, stream, done); err != nil {
 		return err
@@ -211,7 +211,6 @@ func (c *Client) PushFile(name tapr.PathName, rd io.Reader, append bool) error {
 		}
 
 		log.Debug.Printf("client.Push: log received: %v", entry.Seq)
-
 	}
 
 	return nil

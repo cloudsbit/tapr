@@ -141,11 +141,16 @@ rm -rf /srv/tapr/
 # 文件位于:
 /srv/tapr/stor/fs
 
+# 
 ./tapradm -config /home/johnny/tapr/tapr.yaml -log debug vol -l
 ```
 
 ![image-20250228100306018](assets\image-20250228100306018.png)
 ![image-20250228100609570](assets\image-20250228100609570.png)
+
+## volumes
+
+## ![image-20250303111027294](assets\image-20250303111027294.png)
 
 ## Tapr源码记录
 
@@ -159,6 +164,20 @@ rm -rf /srv/tapr/
 # store中的Register也默认注册了"store/fs" 和"store/tape" 两支路由
 #
 
+    changers: {
+      "primary": {
+        driver: "mtx",   # 枚举有：fake, mtx, scsi
+        options: {
+          transfer: 4,   # 数据传输slots(0...3?), 通常是有磁带驱动器的槽
+          storage: 32,   # 存储slots(1...32)
+          ix: 4,         # 邮件slots(33...36)
+          volumes: 16
+        }
+      }
+    },
+
+比如在磁带库中，有多个槽位用于存放磁带，当需要批量导出数据时，系统将这些磁带移动到特定的槽位（mailbox slots），供外部访问或迁移。或者，在云存储中，特定的存储桶或目录作为中间区域，用于批量上传或下载大量数据。
+总之，这句话描述的是在存储设施（silo）中用于批量导入和导出数据卷的中间槽位或位置，类似于邮箱的投递口，便于高效、集中地处理大量数据传输。
 ```
 
 
@@ -177,8 +196,13 @@ rm -rf /srv/tapr/
 # Oracle's StorageTek Linear Tape File System (LTFS), Open Edition： LTFS-OE version 1.x/2.x(ltfs-1.2.7.1.0_20151020_linux_6_5.tar.gz)
 # 
 
-
 # Working with tape devices: 
 # https://www.ibm.com/docs/en/linux-on-systems?topic=cat-work-devices
+
+# go mtx:
+# https://github.com/birkelund/mtx
+
+# go LTFS
+#https://github.com/bh107/bltfs/tree/master
 ```
 

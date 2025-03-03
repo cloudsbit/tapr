@@ -98,7 +98,7 @@ func Maybe(fn func(s State)) {
 	fn(defaultState)
 }
 
-// Maybe executes the given fn in a simulation state.
+// Maybex executes the given fn in a simulation state.
 func Maybex(s State, fn func(State)) {
 	// check if simulation is enabled
 	if atomic.LoadInt32(&enabled) == 0 {

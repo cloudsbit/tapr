@@ -15,16 +15,15 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http"
-	_ "net/http/pprof"
-	"os"
-
 	"github.com/cloudsbit/tapr/config"
 	"github.com/cloudsbit/tapr/flags"
 	"github.com/cloudsbit/tapr/rpc/ioserver"
 	"github.com/cloudsbit/tapr/sim"
 	"github.com/cloudsbit/tapr/store"
+	"log"
+	"net/http"
+	_ "net/http/pprof"
+	"os"
 
 	// store implementations
 	_ "github.com/cloudsbit/tapr/store/fs/service"
@@ -67,6 +66,7 @@ func main() {
 
 	for name, cfg := range srvConfig.Stores {
 		// here name is 'default' or 'archive'
+		fmt.Fprintf(os.Stderr, "xxxx--Name: %v\n", name)
 		stg, err := store.Create(name, cfg)
 		if err != nil {
 			log.Fatal(err)
